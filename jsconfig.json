@@ -1,0 +1,11 @@
+// the below is the configuration setup for shadCN.
+{
+  "files": [],
+  "references": [],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
