@@ -131,3 +131,16 @@ Removed Everything and added tailwind cmd.
     @apply bg-background text-foreground;
   }
 }
+
+/* the below are the custom classNames By devloper(not pre defind)*/
+
+.main-heading-fontSize {
+  @apply text-7xl text-green-400 mb-2;
+}
+
+.main-subHeading-font{
+  @apply text-5xl 
+}
+.main-logginButtion-styles{
+  @apply bg-black text-blue-100 text-2xl
+}
