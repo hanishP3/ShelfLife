@@ -4,12 +4,13 @@ import { Button } from "@/components/ui/button";
 
 export default function Header() {
   return (
-    <div>
-      <h3 className="main-heading-fontSize">Buy it. Add it. Relax.</h3>
+    <div className="text-center justify-center" >
+      <h3 className="main-heading-fontSize">Shelf Life</h3>
+      <h4 className="main-heading-fontSize">Buy it. Add it. Relax.</h4>
       <h3 className="main-subHeading-font">
-        Get smart reminders before your food goes bad.
+        Get smart reminders before your stock goes bad.
       </h3>
-      <div className="flex flex-row gap-2 my-3">
+      <div className="flex flex-row gap-10 my-3 justify-center ">
         <div
           className="flex   items-center justify-center"
           onClick={() => alert("The Button is clicked")}

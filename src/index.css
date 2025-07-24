@@ -135,12 +135,55 @@ Removed Everything and added tailwind cmd.
 /* the below are the custom classNames By devloper(not pre defind)*/
 
 .main-heading-fontSize {
-  @apply text-7xl text-green-400 mb-2;
+  @apply text-7xl text-white font-bold mb-4 drop-shadow-lg;
 }
 
-.main-subHeading-font{
-  @apply text-5xl 
+.main-subHeading-font {
+  @apply text-4xl text-white/60 font-semibold mb-6;
 }
-.main-logginButtion-styles{
-  @apply bg-black text-blue-100 text-2xl
+
+.main-logginButtion-styles {
+  @apply bg-white text-black text-xl font-medium px-6 py-2 rounded-md shadow-md hover:bg-green-200 transition-all duration-300;
 }
+
+/*the below is for the animation of the background*/
+@layer utilities {
+  @keyframes gradient-soft {
+    0% {
+      background-position: 50% 50%;
+    }
+    25% {
+      background-position: 60% 40%;
+    }
+    50% {
+      background-position: 50% 60%;
+    }
+    75% {
+      background-position: 40% 50%;
+    }
+    100% {
+      background-position: 50% 50%;
+    }
+  }
+
+  .animate-gradient-soft {
+    animation: gradient-soft 3s linear infinite;
+    will-change: background-position;
+  }
+}
+
+
+/* @layer utilities {
+  @keyframes gradient-x {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .animate-gradient-x {
+    animation: gradient-x 8s ease infinite;
+  }
+} */

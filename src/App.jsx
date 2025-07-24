@@ -2,28 +2,22 @@ import { Button } from "@/components/ui/button";
 import "./index.css";
 import Header from "./components/ui/Header";
 import Body from "./components/ui/Body";
+import Footer from "./components/ui/Footer";
 function App() {
   return (
     <>
-      <div className="w-full bg-black font-bold">
-        <h1
-          className="text-5xl text-blue-50 ml-2.5 
-        text-center
-        "
-        >
-          Shelf Life
-        </h1>
-      </div>
-      <div className="h-lvh ">
+      <div className="h-lvh">
         <main
-          className="flex justify-between flex-row 
-  h-4/6 items-center border-4 px-10
-        "
+          className="flex h-lvh items-center justify-center px-10
+  bg-[linear-gradient(0deg,#0E2954,#000000)]
+  bg-[length:300%_300%]
+  animate-gradient-soft"
         >
           <Header></Header>
         </main>
         <div>
           <Body></Body>
+          <Footer></Footer>
         </div>
       </div>
     </>
