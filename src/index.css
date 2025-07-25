@@ -149,28 +149,24 @@ Removed Everything and added tailwind cmd.
 /*the below is for the animation of the background*/
 @layer utilities {
   @keyframes gradient-soft {
-    0% {
-      background-position: 50% 50%;
-    }
-    25% {
-      background-position: 60% 40%;
-    }
-    50% {
-      background-position: 50% 60%;
-    }
-    75% {
-      background-position: 40% 50%;
-    }
-    100% {
-      background-position: 50% 50%;
-    }
+    
+  0% {
+    background-position: 0% 50%;
   }
-
-  .animate-gradient-soft {
-    animation: gradient-soft 3s linear infinite;
-    will-change: background-position;
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
+}
+
+  .animate-gradient-soft {
+    animation: gradient-soft 8s linear infinite;
+    will-change: background-position;
+  }
+
 
 
 /* @layer utilities {
