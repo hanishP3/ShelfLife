@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export default function Header() {
   return (
     <div className="text-center justify-center" >
-      <h3 className="main-heading-fontSize">Shelf Life</h3>
+      <h3 className="main-heading-fontSize-logo">Shelf Life</h3>
       <h4 className="main-heading-fontSize">Buy it. Add it. Relax.</h4>
       <h3 className="main-subHeading-font">
         Get smart reminders before your stock goes bad.

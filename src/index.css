@@ -134,8 +134,11 @@ Removed Everything and added tailwind cmd.
 
 /* the below are the custom classNames By devloper(not pre defind)*/
 
+.main-heading-fontSize-logo {
+  @apply text-7xl text-white font-extrabold mb-4 drop-shadow-lg;
+}
 .main-heading-fontSize {
-  @apply text-7xl text-white font-bold mb-4 drop-shadow-lg;
+  @apply text-6xl text-white font-black mb-4 drop-shadow-lg;
 }
 
 .main-subHeading-font {
@@ -168,7 +171,6 @@ Removed Everything and added tailwind cmd.
   }
 
 
-
 /* @layer utilities {
   @keyframes gradient-x {
     0%, 100% {
@@ -183,3 +185,14 @@ Removed Everything and added tailwind cmd.
     animation: gradient-x 8s ease infinite;
   }
 } */
+
+.body-mainHeading{
+   @apply text-5xl text-[#0E2954] font-medium mb-4 drop-shadow-lg ml-2;
+}
+.body-subHeading{
+  @apply text-3xl text-gray-600 font-medium mb-4 drop-shadow-lg ml-2 leading-11;
+}
+
+.footer-text{
+  @apply text-2xl text-white font-light text-center pt-5
+}
