@@ -187,7 +187,7 @@ Removed Everything and added tailwind cmd.
 } */
 
 .body-mainHeading{
-   @apply text-5xl text-[#0E2954] font-medium mb-4 drop-shadow-lg ml-2;
+   @apply text-5xl text-[#0E2954] font-medium mb-4 drop-shadow-lg ml-2 ;
 }
 .body-subHeading{
   @apply text-3xl text-gray-600 font-medium mb-4 drop-shadow-lg ml-2 leading-11;
