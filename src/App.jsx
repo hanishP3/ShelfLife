@@ -2,11 +2,10 @@ import { Button } from "@/components/ui/button";
 import "./index.css";
 import Header from "./components/ui/Header";
 import Body from "./components/ui/Body";
-import Footer from "./components/ui/Footer";
 import { Route, Routes } from "react-router-dom";
-import Home from "./components/Home";
-import Login from "./components/Login";
-
+import Footer from "./pages/Footer";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
 function App() {
   return (
     <>
