@@ -2,6 +2,8 @@ import React from "react";
 import Header from "../components/ui/Header";
 import Body from "../components/ui/Body";
 import Footer from "./Footer";
+import BodySecound from "../components/ui/BodySecound";
+
 function Home() {
   return (
     <div className="h-lvh">
@@ -13,6 +15,7 @@ function Home() {
       </main>
       <div>
         <Body></Body>
+        <BodySecound></BodySecound>
         <Footer></Footer>
       </div>
     </div>

@@ -9,7 +9,7 @@ export default function Header() {
     <div className="flex flex-row justify-between items-center w-[100%] align-center">
       <div>
         <img
-          src="public/mainbg2.png"
+          src="images/mainbg2.png"
           alt="womenSearching"
           className="w-[500px] h-[500px] ml-25 animate-slide-in-left"
         />
@@ -21,7 +21,7 @@ export default function Header() {
           Get smart reminders before your stock goes bad,
           <br />
           because every item counts.
-        </h3>
+        </h3> 
         <div className="flex flex-row gap-10 my-3  ">
           <div
             className="flex  "

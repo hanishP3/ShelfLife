@@ -169,45 +169,30 @@ Removed Everything and added tailwind cmd.
   will-change: background-position;
 }
 
-/* @layer utilities {
-  @keyframes gradient-x {
-    0%, 100% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-  }
-
-  .animate-gradient-x {
-    animation: gradient-x 8s ease infinite;
-  }
-} */
+.body-height{
+  @apply h-[100vh] px-20
+}
 
 .body-mainHeading {
-  @apply text-5xl text-[#0E2954] font-medium mb-4 drop-shadow-lg ml-2;
+  @apply text-5xl text-black font-bold my-10 drop-shadow-lg;
 }
 .body-subHeading {
   @apply text-3xl text-gray-600 font-medium mb-4 drop-shadow-lg ml-2 leading-11;
 }
 
+
 .footer-text {
   @apply text-2xl text-white font-light text-center pt-5;
 }
 
-@layer utilities {
-  @keyframes slide-in-left {
-    0% {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
+.body-images{
+  @apply h-auto rounded-xl 
+}
 
-  .animate-slide-in-left {
-    animation: slide-in-left 1s ease-out forwards;
-  }
+.body-imagesMainText{
+  @apply mt-2 font-bold text-3xl 
+}
+
+.body-imagesSubText{
+  @apply text-xl text-gray-600 font-extralight 
 }
