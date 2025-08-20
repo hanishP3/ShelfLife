@@ -146,7 +146,7 @@ Removed Everything and added tailwind cmd.
 }
 
 .main-logginButtion-styles {
-  @apply flex items-center justify-center  bg-black text-white text-xl font-normal px-6 py-2          shadow-md hover:bg-green-200 transition-all duration-300;
+  @apply flex items-center justify-center  bg-black text-white text-xl font-normal px-6 py-2          shadow-md hover:bg-white transition-all duration-300 hover:text-black ;
 }
 
 /*the below is for the animation of the background*/

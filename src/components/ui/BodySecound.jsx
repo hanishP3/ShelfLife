@@ -38,15 +38,15 @@ function BodySecound() {
 
           <div>
             <img
-              src="/images/user angry on shop keeper.png"
-              alt="Angry customer confronting shopkeeper"
+              src="/images/happyUserAndCustomer.png"
+              alt="Happy customer with shopkeeper"
               className="body-images"
             />
             <h3 className="body-imagesMainText">
-              Trust Broken, Frustration Rises
+              Building Trust, Creating Smiles
             </h3>
             <p className="body-imagesSubText">
-              Customers lose faith when expired goods are sold.
+              Customers feel valued when fresh and safe goods are delivered.
             </p>
           </div>
         </div>
