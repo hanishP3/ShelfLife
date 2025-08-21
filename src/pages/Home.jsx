@@ -3,6 +3,8 @@ import Header from "../components/ui/Header";
 import Body from "../components/ui/Body";
 import Footer from "./Footer";
 import BodySecound from "../components/ui/BodySecound";
+import ArticlesPage from "../components/ArticlesPage";
+import OurSolutionPage from "../components/OurSolutionPage";
 
 function Home() {
   return (
@@ -15,7 +17,9 @@ function Home() {
       </main>
       <div>
         <Body></Body>
+        <ArticlesPage></ArticlesPage>
         <BodySecound></BodySecound>
+        <OurSolutionPage></OurSolutionPage>
         <Footer></Footer>
       </div>
     </div>
