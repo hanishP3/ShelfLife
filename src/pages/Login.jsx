@@ -10,8 +10,19 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useState } from "react";
 
 function Login() {
+
+  const [userMailInpput,setuserMailInpput] = useState('');
+  const [userPasswordInput,setuserPasswordInput] = useState('');
+
+
+  const onSignUpButton=()=>{
+
+  }
+
+
   return (
     <div className="flex flex-row bg-white h-[100vh] w-[100vw]">
       <Card className="w-[60vw]  h-[100vh]  ">
@@ -35,6 +46,8 @@ function Login() {
                     id="email"
                     type="email"
                     placeholder="m@example.com"
+                    value={userMailInpput}
+                    onchange = {(e)=>setuserMailInpput(e.target.value)}
                     required
                   />
                 </div>
@@ -48,7 +61,7 @@ function Login() {
                       Forgot your password?
                     </a>
                   </div>
-                  <Input id="password" type="password" required />
+                  <Input id="password" type="password" required value = {userPasswordInput} onchange = {(e)=>setuserPasswordInput(e.target.Input)}/>
                 </div>
               </div>
             </form>
@@ -64,7 +77,7 @@ function Login() {
         </div>
       </Card>
       <img
-        src={"public/northernLights.jpg"}
+        src={"public/images/northernLights.jpg"}
         alt="login page picture"
         className="w-[40vw] h-[100vh]"
       />
