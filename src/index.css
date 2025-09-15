@@ -135,18 +135,18 @@ Removed Everything and added tailwind cmd.
 /* the below are the custom classNames By devloper(not pre defind)*/
 
 .main-heading-fontSize-logo {
-  @apply text-7xl text-black font-bold drop-shadow-lg;
+  @apply text-7xl text-black font-semibold drop-shadow-lg;
 }
 .main-heading-fontSize {
   @apply text-2xl text-black font-light mb-2 drop-shadow-lg;
 }
 
 .main-subHeading-font {
-  @apply text-4xl text-black  my-3;
+  @apply text-4xl text-black  my-3 font-light ;
 }
 
 .main-logginButtion-styles {
-  @apply flex items-center justify-center  bg-black text-white text-xl font-normal px-6 py-2          shadow-md hover:bg-white transition-all duration-300 hover:text-black ;
+  @apply flex items-center justify-center  text-xl font-light  shadow-md transition-all duration-300  rounded-[5px] cursor-pointer;
 }
 
 /*the below is for the animation of the background*/
