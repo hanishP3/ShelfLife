@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -10,24 +9,25 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { supabase } from "../supabaseClient";
+import { supabase } from "../supaBaseClient";
 
 
 function Login() {
   const location = useLocation();
-  const { existingUser } = location.state || { existingUser: true };
+  const existingUser = location.state?.existingUser;
 
-  const [isLogin, setIsLogin] = useState(existingUser);
+  // state to capture form input
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
 
+  // just placeholders for now (you’ll plug supabase calls here)
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (isLogin) {
-      // 🔹 Login
+    if (existingUser) {
+      // LOGIN FLOW
       const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
@@ -35,149 +35,107 @@ function Login() {
 
       if (error) {
         console.error("Login error:", error.message);
+        alert(error.message);
       } else {
-        console.log("Logged in:", data);
+        console.log("Login success:", data);
+        // redirect user or set session here
       }
     } else {
-      // 🔹 Sign Up
+      // SIGNUP FLOW
       const { data, error } = await supabase.auth.signUp({
         email,
         password,
-        options: {
-          data: { full_name: name }, // custom metadata
-        },
       });
 
       if (error) {
         console.error("Signup error:", error.message);
+        alert(error.message);
       } else {
-        console.log("Signed up:", data);
+        console.log("Signup success:", data);
+        // you might want to redirect or ask for email confirmation
       }
     }
   };
 
   return (
-    <div className="flex h-screen w-screen bg-gradient-to-br from-orange-100 via-white to-orange-50">
-      {/* Auth Card */}
-      <div className="flex items-center justify-center w-[60%]">
-        <Card className="w-full max-w-md backdrop-blur-lg bg-white/70 border border-gray-200/50 shadow-2xl rounded-3xl">
-          <CardHeader className="text-center space-y-3">
-            <CardTitle className="text-3xl font-extrabold text-gray-800 tracking-tight">
-              {isLogin ? "Welcome Back 👋" : "Create Account 🚀"}
-            </CardTitle>
-            <CardDescription className="text-gray-500 text-base">
-              {isLogin
-                ? "Login to continue tracking your stock"
-                : "Sign up and never forget expiry dates again"}
+    <div className="flex flex-row h-screen w-screen">
+      {/* Left Side - Form */}
+      <div className="flex items-center justify-center w-[60vw] bg-gradient-to-br from-amber-200 via-pink-100 to-white p-10">
+        <Card className="w-full max-w-md shadow-2xl rounded-2xl">
+          <CardHeader className="space-y-2 text-center">
+            {existingUser ? (
+              <CardTitle className="text-3xl font-bold">
+                Welcome Back to{" "}
+                <span className="text-amber-500">Shelf Life</span>
+              </CardTitle>
+            ) : (
+              <CardTitle className="text-3xl font-bold">
+                Welcome to <span className="text-amber-500">Shelf Life</span>
+              </CardTitle>
+            )}
+            <CardDescription>
+              {existingUser
+                ? "Login to your account and start tracking your groceries"
+                : "Create an account to start tracking your groceries"}
             </CardDescription>
           </CardHeader>
-
           <CardContent>
-            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-              {/* Only show Name input in Signup */}
-              {!isLogin && (
+            <form onSubmit={handleSubmit}>
+              <div className="flex flex-col gap-6">
                 <div className="grid gap-2">
-                  <Label htmlFor="name" className="text-gray-700 font-medium">
-                    Full Name
-                  </Label>
+                  <Label htmlFor="email">Email</Label>
                   <Input
-                    id="name"
-                    type="text"
-                    placeholder="Your name"
-                    className="rounded-xl focus:ring-2 focus:ring-orange-400"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    id="email"
+                    type="email"
+                    placeholder="m@example.com"
                     required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
-              )}
-
-              {/* Email */}
-              <div className="grid gap-2">
-                <Label htmlFor="email" className="text-gray-700 font-medium">
-                  Email
-                </Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="m@example.com"
-                  className="rounded-xl focus:ring-2 focus:ring-orange-400"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
+                <div className="grid gap-2">
+                  <div className="flex items-center">
+                    <Label htmlFor="password">Password</Label>
+                    {existingUser && (
+                      <a
+                        href="#"
+                        className="ml-auto inline-block text-sm text-amber-600 hover:underline"
+                      >
+                        Forgot your password?
+                      </a>
+                    )}
+                  </div>
+                  <Input
+                    id="password"
+                    type="password"
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
               </div>
-
-              {/* Password */}
-              <div className="grid gap-2">
-                <Label htmlFor="password" className="text-gray-700 font-medium">
-                  Password
-                </Label>
-                <Input
-                  id="password"
-                  type="password"
-                  placeholder="••••••••"
-                  className="rounded-xl focus:ring-2 focus:ring-orange-400"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
-              </div>
-
-              <Button
-                type="submit"
-                className="w-full rounded-xl bg-gradient-to-r from-orange-500 to-[#F4CE5E] text-white font-semibold hover:opacity-90 transition"
-              >
-                {isLogin ? "Login" : "Sign Up"}
-              </Button>
+              <CardFooter className="flex flex-col gap-3 mt-6">
+                <Button type="submit" className="w-full">
+                  {existingUser ? "Login" : "Sign Up"}
+                </Button>
+                <Button variant="outline" className="w-full">
+                  Continue with Google
+                </Button>
+              </CardFooter>
             </form>
           </CardContent>
-
-          <CardFooter className="flex flex-col gap-3">
-            <Button
-              variant="outline"
-              className="w-full rounded-xl border-gray-300 hover:bg-gray-100"
-            >
-              Continue with Google
-            </Button>
-
-            {/* Toggle Login / Signup */}
-            <p className="text-sm text-gray-600 mt-2">
-              {isLogin ? (
-                <>
-                  Don’t have an account?{" "}
-                  <button
-                    type="button"
-                    className="text-orange-600 font-semibold hover:underline"
-                    onClick={() => setIsLogin(false)}
-                  >
-                    Sign up
-                  </button>
-                </>
-              ) : (
-                <>
-                  Already have an account?{" "}
-                  <button
-                    type="button"
-                    className="text-orange-600 font-semibold hover:underline"
-                    onClick={() => setIsLogin(true)}
-                  >
-                    Login
-                  </button>
-                </>
-              )}
-            </p>
-          </CardFooter>
         </Card>
       </div>
 
-      {/* Hero Image */}
-      <div className="hidden md:flex w-[40%]">
+      {/* Right Side - Image */}
+      <div className="relative w-[40vw] h-screen">
         <img
-          src="/images/northernLights.jpg"
-          alt="Auth Illustration"
-          className="object-cover w-full h-full  shadow-lg"
+          src={"images/northernLights.jpg"}
+          alt="login page illustration"
+          className="w-full h-full object-cover"
         />
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-black/30"></div>
       </div>
     </div>
   );

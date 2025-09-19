@@ -53,7 +53,7 @@ export default function Header() {
         className="flex"
         onClick={() => {
           console.log("Redirecting to login page");
-          navigation("/login");
+          navigation("/login",{state : {existingUser :true}});
         }}
       >
         <Button
