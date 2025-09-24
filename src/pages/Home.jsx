@@ -10,16 +10,15 @@ function Home() {
   return (
     <div className="h-lvh">
       <main
-       className="flex h-lvh items-center justify-center px-10
-   bg-[#F4CE5E] "
+       className="h-lvh"
       >
         <Header></Header>
       </main>
       <div>
-        <Body></Body>
+        {/* <Body></Body>
         <ArticlesPage></ArticlesPage>
         <BodySecound></BodySecound>
-        <OurSolutionPage></OurSolutionPage>
+        <OurSolutionPage></OurSolutionPage> */}
         <Footer></Footer>
       </div>
     </div>

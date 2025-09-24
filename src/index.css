@@ -146,7 +146,7 @@ Removed Everything and added tailwind cmd.
 }
 
 .main-logginButtion-styles {
-  @apply flex items-center justify-center  text-xl font-light  shadow-md transition-all duration-300  rounded-[5px] cursor-pointer;
+  @apply  text-2xl font-light  shadow-gray-500 transition-all duration-300  rounded-[13px] cursor-pointer;
 }
 
 /*the below is for the animation of the background*/
@@ -190,10 +190,10 @@ Removed Everything and added tailwind cmd.
 }
 
 .body-mainHeading {
-  @apply text-5xl text-black font-bold my-10 ;
+  @apply text-9xl text-black  italic font-semibold;
 }
 .body-subHeading {
-  @apply text-3xl text-gray-600 font-medium mb-4 drop-shadow-lg ml-2 leading-11;
+  @apply text-3xl text-gray-600 font-light  drop-shadow-lg  leading-11;
 }
 
 
