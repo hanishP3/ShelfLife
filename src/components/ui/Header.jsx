@@ -83,7 +83,8 @@ export default function Header() {
         <div>
           <h1 className="body-mainHeading">Shelf-Life</h1>
           <h4 className="body-subHeading mt-5">
-           Get Remainded Before your stock goes bad, because every item counts.
+            Get Remainded Before your stock goes bad,
+            <br></br> because every item counts.
           </h4>
         </div>
         {/* Buttons */}
@@ -102,6 +103,7 @@ export default function Header() {
             >
               Sign Up Now
             </Button>
+            
           </div>
           <div
             className="flex"
