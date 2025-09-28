@@ -15,8 +15,8 @@ function Home() {
         <Header></Header>
       </main>
       <div>
-        {/* <Body></Body>
-        <ArticlesPage></ArticlesPage>
+        <Body></Body>
+        {/* <ArticlesPage></ArticlesPage>
         <BodySecound></BodySecound>
         <OurSolutionPage></OurSolutionPage> */}
         <Footer></Footer>

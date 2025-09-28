@@ -190,7 +190,7 @@ Removed Everything and added tailwind cmd.
 }
 
 .body-mainHeading {
-  @apply text-9xl text-black  italic font-semibold;
+  @apply text-9xl text-black  font-extralight;
 }
 .body-subHeading {
   @apply text-3xl text-gray-600 font-light  drop-shadow-lg  leading-11;

@@ -2,7 +2,7 @@
 function Body() {
   return (
     <div className="body-height">
-      <div className="body-mainHeading">Story Time</div>
+      <h1 className="text-7xl font-light mb-4">Story time</h1>
       <div className="flex flex-row gap-4">
         <div >
           <img

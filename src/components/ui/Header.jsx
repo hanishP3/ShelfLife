@@ -2,9 +2,15 @@ import React from "react";
 import "../../index.css";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-
+import TextType from "../TextType";
+import SplitText from "../SplitText";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import Particles from "../Particles";
 export default function Header() {
   const navigation = useNavigate();
+  const handleAnimationComplete = () => {
+    console.log("All letters have animated!");
+  };
   return (
     // <div className="flex flex-row gap-16 items-center w-full">
     //   {/* Left Side - Image */}
@@ -66,62 +72,163 @@ export default function Header() {
     //     </div>
     //   </div>
     // </div>
-    <div className="relative bg-white min-h-screen overflow-hidden">
-      {/* Aurora background blobs */}
-      <div
-        className="absolute -top-[150px] left-0 w-[400px] h-[400px] 
-  bg-gradient-to-tr from-blue-400 via-indigo-500 to-purple-600 
-  rounded-full blur-3xl opacity-30"
-      ></div>
+    //   <div className="relative bg-white min-h-screen overflow-hidden">
+    //     {/* Aurora background blobs */}
+    //     {/* <div
+    //       className="absolute -top-[150px] left-0 w-[400px] h-[400px]
+    // bg-gradient-to-tr from-blue-400 via-indigo-500 to-purple-600
+    // rounded-full blur-3xl opacity-30"
+    //     ></div>
 
-      <div className="absolute top-25 right-0 w-[600px] h-[400px] bg-gradient-to-tl from-blue-300 via-sky-500 to-cyan-400  blur-3xl opacity-30"></div>
+    //     <div className="absolute top-25 right-0 w-[600px] h-[400px] bg-gradient-to-tl from-blue-300 via-sky-500 to-cyan-400  blur-3xl opacity-30"></div> */}
 
-      <div>
-        <h3>Header Content</h3>
+    //     <div className="flex justify-center items-center flex-col text-center">
+    //       <div>
+    //           <img src="/images/icon.png" alt="icon" srcset="" className="w-50 cursor-grab"  />
+
+    //       </div>
+    //       <div className="mt-15">
+    //         <SplitText
+    //           text="Shelf-life"
+    //           className="text-9xl font-medium text-center "
+    //           delay={100}
+    //           duration={0.6}
+    //           ease="power3.out"
+    //           splitType="chars"
+    //           from={{ opacity: 0, y: 40 }}
+    //           to={{ opacity: 1, y: 0 }}
+    //           threshold={0.1}
+    //           rootMargin="-100px"
+    //           textAlign="center"
+    //           onLetterAnimationComplete={handleAnimationComplete}
+    //         />
+    //         <h4 className="body-subHeading mt-5">
+    //           Get Remainded Before your stock goes bad,
+    //           <br></br> because every item counts.
+    //         </h4>
+    //       </div>
+    //       {/* Buttons */}
+    //       <div className="flex flex-row gap-6 my-6">
+    //         <div
+    //           className="flex"
+    //           onClick={() => {
+    //             console.log("Redirecting to signup page");
+    //             navigation("/login", { state: { existingUser: false } });
+    //           }}
+    //         >
+    //           <Button
+    //             className="main-logginButtion-styles
+    //   bg-gradient-to-b from-[#2567FF] to-[#0A3FFF]
+    //   py-6 px-8 hover:from-black hover:to-gray-800 hover:text-white "
+    //           >
+    //             Sign Up Now
+    //           </Button>
+    //         </div>
+    //         <div
+    //           className="flex"
+    //           onClick={() => {
+    //             console.log("Redirecting to login page");
+    //             navigation("/login", { state: { existingUser: true } });
+    //           }}
+    //         >
+    //           <Button
+    //             className="main-logginButtion-styles
+    //           py-6 px-8 hover:bg-orange-500 hover:text-white"
+    //           >
+    //             Log in
+    //           </Button>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    <div className="relative w-full h-screen overflow-hidden ">
+      {/* Particles background */}
+      <div className="absolute inset-0 -z-10">
+        <Particles
+          particleColors={["#111184", "#ffffff"]}
+          particleCount={300}
+          particleSpread={10}
+          speed={0.1}
+          particleBaseSize={100}
+          moveParticlesOnHover={true}
+          alphaParticles={true}
+          disableRotation={false}
+        />
       </div>
-      <div className="flex justify-center items-center mt-40 flex-col text-center">
-        <div>
-          <h1 className="body-mainHeading">Shelf-Life</h1>
+
+      {/* Foreground content */}
+      <div className="flex justify-center items-center flex-col text-center">
+        <div className="flex items-center flex-row justify-between w-screen px-8">
+          {/* Empty space */}
+          {/* <div className="w-88"></div> */}
+
+          {/* Logo */}
+          <img
+            src="/images/icon.png"
+            alt="icon"
+            className="w-50 cursor-pointer"
+          />
+
+          {/* Box */}
+          <button
+          onClick={()=>navigation('/login/body')}
+            className="flex items-center bg-gradient-to-r from-blue-600 to-blue-800 
+             text-white rounded-2xl shadow-xl px-6 py-3 w-fit mb-10 cursor-pointer
+             hover:scale-105 transition-transform duration-200"
+          >
+            <span className="text-lg font-semibold tracking-wide">
+              What We Do?
+            </span>
+          </button>
+        </div>
+
+        <div className="mt-15">
+          <SplitText
+            text="Shelf-life"
+            className="text-9xl font-sans text-center"
+            delay={100}
+            duration={0.6}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+            onLetterAnimationComplete={handleAnimationComplete}
+          />
           <h4 className="body-subHeading mt-5">
-            Get Remainded Before your stock goes bad,
-            <br></br> because every item counts.
+            Get Reminded Before your stock goes bad,
+            <br /> because every item counts.
           </h4>
         </div>
+
         {/* Buttons */}
         <div className="flex flex-row gap-6 my-6">
           <div
             className="flex"
-            onClick={() => {
-              console.log("Redirecting to signup page");
-              navigation("/login", { state: { existingUser: false } });
-            }}
+            onClick={() =>
+              navigation("/login", { state: { existingUser: false } })
+            }
           >
-            <Button
-              className="main-logginButtion-styles
-    bg-gradient-to-b from-[#2567FF] to-[#0A3FFF]
-    py-6 px-8 hover:from-black hover:to-gray-800 hover:text-white "
-            >
+            <Button className="main-logginButtion-styles bg-gradient-to-b from-[#2567FF] to-[#0A3FFF] py-6 px-8  hover:text-white hover:scale-105 transition-transform duration-200">
               Sign Up Now
             </Button>
-            
           </div>
           <div
             className="flex"
-            onClick={() => {
-              console.log("Redirecting to login page");
-              navigation("/login", { state: { existingUser: true } });
-            }}
+            onClick={() =>
+              navigation("/login", { state: { existingUser: true } })
+            }
           >
-            <Button
-              className="main-logginButtion-styles
-            py-6 px-8 hover:bg-orange-500 hover:text-white"
-            >
+            <Button className="main-logginButtion-styles py-6 px-8   hover:scale-105 transition-transform duration-200">
               Log in
             </Button>
           </div>
         </div>
       </div>
     </div>
+
     //   <div className="relative bg-white min-h-screen overflow-hidden">
     //     {/* Aurora background blobs */}
     //     <div
