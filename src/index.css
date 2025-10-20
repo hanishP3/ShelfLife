@@ -4,4 +4,5 @@
 @theme {
   --color-primary: #F6D36B;
   --font-mainHeading: "Jost","Josefin Sans","Poller One","Poller One",'Luckiest Guy','cursive';
+  --font-subHeading :"Josefin Sans","Poller One","Poller One",'Luckiest Guy','cursive';
 }
